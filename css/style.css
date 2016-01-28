@@ -304,6 +304,17 @@ h1 {
    Modify as content requires.
    ========================================================================== */
 
+@media only screen and (max-width: 540px){
+  .amount input{
+    width: 100%;
+  }
+  .amount select{
+    width: 40%;
+    display: inline;
+  }
+
+}
+
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
 }
