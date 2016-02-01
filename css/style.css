@@ -304,15 +304,61 @@ h1 {
    Modify as content requires.
    ========================================================================== */
 
+@media only screen and (max-width: 340px){
+  .amount select{
+    /*width: 40%;*/
+    width: 54px;
+    min-width: 54px;
+  }
+  h1{
+    font-size: 150%;
+  }
+  body{
+    height: 100%;
+    bottom: 0;
+    flex-wrap: wrap;
+  }
+  #amount{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+  #from-value{
+    order:1;
+  }
+  #from-currency{
+    order:2;
+    float: left;
+  }
+  #to-currency{
+    order:3;
+    float: right;
+  }
+  #to-value{
+    order:4;
+  }
+  .overview{
+    padding: 10px;
+    font-size: 0.7em;
+  }
+}
+
 @media only screen and (max-width: 540px){
+  #amount{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
   .amount input{
     width: 100%;
   }
   .amount select{
-    width: 40%;
-    display: inline;
+    text-align: center;
   }
-
+  .overview{
+    padding: 10px;
+    font-size: 0.8em;
+  }
 }
 
 @media only screen and (min-width: 35em) {

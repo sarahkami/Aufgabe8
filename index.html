@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" manifest="example.appcache">
 
 <head>
    <meta charset="UTF-8">
    <title>Währungsrechner</title>
-   <!-- Icon der Anwendung festlegen. -->
-   <link rel="apple-mobile-web-app-title" href="/img/piggy_bank.png">
+   <!-- Zoomen in der Anwendung verhindern. -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
    <!-- Als Web-App ausweisen und Anwendung im Vollbildmodus anzeigen. -->
    <meta name="mobile-web-app-capable" content="yes">
    <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,6 +13,10 @@
    <meta name="apple-mobile-web-app-title" content="Währungsrechner">
    <meta name="application-name" content="Währungsrechner"> <!-- Windows -->
    <meta name="description" content="Währungsrechner für alle gängigen Währungen">
+   <!-- Icon der Anwendung festlegen. Das Suffix "precomposed" verhindert Veränderung durch iOS < 7. -->
+   <link rel="apple-touch-icon" href="/img/piggy_bank-precomposed.png">
+   <!-- Startbild der Anwendung festlegen. -->
+   <link rel="apple-touch-startup-image" href="/img/piggy_bank-precomposed.png">
    <link rel="stylesheet" href="css/normalize.css">
    <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,14 +29,14 @@
 
       <div class="error-msg">Ein unerwarteter Fehler ist aufgetreten.</div>
 
-      <form name="exchange" class="amount">
+      <form name="exchange" class="amount" id="amount">
 
-         <input name="from-value" type="number" step="any" autofocus>
+         <input name="from-value" type="number" step="any" id="from-value" autofocus>
          <select name="from-currency" id="from-currency">
             <!-- Currencies -->
          </select>
 
-         <input name="to-value" type="number" step="any">
+         <input name="to-value" type="number" step="any" id="to-value">
          <select name="to-currency" id="to-currency">
             <!-- Currencies -->
          </select>
