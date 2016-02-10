@@ -304,11 +304,11 @@ h1 {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 340px){
+@media only screen and (max-width: 375px){
   .amount select{
     /*width: 40%;*/
-    width: 54px;
-    min-width: 54px;
+    width: 70px;
+    min-width: 70px;
   }
   h1{
     font-size: 150%;

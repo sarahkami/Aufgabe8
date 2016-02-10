@@ -1,7 +1,7 @@
 $(function() {
 
    // Variablen
-   var api_url = 'http://localhost/Aufgabe8/api/';
+   var api_url = 'api';
    var fav_currencies = ['EUR', 'USD', 'GBP', 'CHF', 'ILS', 'CNY', 'JPY', 'SGD'];
    var currencies = window.currencies;
    var rates = {};
@@ -69,16 +69,16 @@ $(function() {
       select_to.querySelector('option[value="USD"]').selected = true;
    };
 
-   var registration;
-   if ('serviceWorker' in navigator) {
-     navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
-       // Registration was successful
-       console.log('SUCCESS: ', registration.scope);
-     }).catch(function(err) {
-       // registration failed :(
-       console.log(err);
-     });
-   };
+    var registration;
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+          // Registration was successful
+          console.log('SUCCESS: ', registration.scope);
+        }).catch(function(err) {
+          // registration failed :(
+          console.log('FAIL: ', err);
+        });
+     };
 
    var fetchData = function(callback) {
 
@@ -101,7 +101,8 @@ $(function() {
             $('.error-msg').fadeIn('slow');
          });
        }
-   };
+     };
+
 
    var updateInputFields = function(origin_input_element) {
       if (origin_input_element === input_from) {

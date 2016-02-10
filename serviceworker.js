@@ -1,11 +1,10 @@
-// if ('function' === typeof importScripts) {
-//   importScripts('scripts/polyfill/serviceworker-cache-polyfill.js');
-// }
+// source: https://github.com/lewiscowper/serviceworker-demo/blob/master/public/sw.js
 
 var CACHE_NAME = 'exchange_rates';
 // The files we want to cache
 var urlsToCache = [
-  '/',
+  '.',
+  'index.html',
   'css/normalize.css',
   'css/style.css',
   'manifest.json',
@@ -17,6 +16,7 @@ var urlsToCache = [
   'img/change.png',
   'img/piggy_bank-precomposed.png'
 ];
+
 
 // Set the callback for the install step
 this.oninstall = function (event) {
@@ -37,9 +37,7 @@ this.onactivate = function (event) {
 };
 
 this.onfetch = function (event) {
-  event.respondWith(
-    caches.match(event.request, {ignoreVary: true})
-      .then(function (response) {
+  event.respondWith(function (response) {
         // Cache hit - return response
         if (response) {
           return response;
@@ -75,5 +73,39 @@ this.onfetch = function (event) {
           }
         )
       })
-    );
 };
+
+
+
+// self.addEventListener('install', (event) => {
+//    event.waitUntil(
+//       caches.open(CACHE_NAME)
+//       .then((cache) => {
+//          console.log('[install] Caches opened, adding all core components to cache');
+//          return cache.addAll(REQUIRED_FILES);
+//       })
+//       .then(() => {
+//          console.log('[install] All required resources have been cached, we\'re good!');
+//          return self.skipWaiting();
+//       })
+//    );
+// });
+
+// self.addEventListener('activate', (event) => {
+//    event.waitUntil(self.clients.claim());
+// });
+
+// self.addEventListener('fetch', (event) => {
+//    console.log('[fetch] Handling fetch event for:', event.request.url);
+//    event.respondWith(
+//       caches.match(event.request).then((response) => {
+//          if (response) {
+//             console.log('[fetch] Returning from ServiceWorker cache: ', event.request.url);
+//             return response;
+//          }
+//          console.log('[fetch] Returning from server: ', event.request.url);
+//          return fetch(event.request);
+//       })
+//    );
+// });
+
