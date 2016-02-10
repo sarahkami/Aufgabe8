@@ -69,6 +69,17 @@ $(function() {
       select_to.querySelector('option[value="USD"]').selected = true;
    };
 
+   var registration;
+   if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+       // Registration was successful
+       console.log('SUCCESS: ', registration.scope);
+     }).catch(function(err) {
+       // registration failed :(
+       console.log(err);
+     });
+   };
+
    var fetchData = function(callback) {
 
     var online = window.navigator.onLine;
