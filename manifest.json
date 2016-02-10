@@ -1,0 +1,14 @@
+{
+   "name": "Waehrungsrechner",
+   "short_name": "Waehrungsrechner",
+   "theme_color": "#76b900",
+   "background_color": "#ffffff",
+   "icons": [{
+      "src": "img/piggy_bank-precomposed.png",
+      "sizes": "512x512",
+      "type": "image/png"
+   }],
+   "start_url": "index.html",
+   "display": "standalone",
+   "orientation": "portrait"
+}

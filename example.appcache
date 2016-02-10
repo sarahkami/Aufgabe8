@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# Version: 1.2
+
+CACHE:
+.
+index.html
+manifest.json
+js/currencies.json.js
+js/jquery-2.1.4.min.js
+js/script.js
+css/normalize.css
+css/style.css
+api/data.json
+api/index.php
+img/change.png
+img/piggy_bank-precomposed.png
+
+NETWORK:
+*
